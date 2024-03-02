@@ -43,7 +43,8 @@ form.addEventListener("submit", (e) => {
                     inputMonth.value == "09" ||
                     inputMonth.value == "9" ||
                     inputMonth.value == "11") && inputDay.value == "31") || (
-                        ((inputMonth.value == "02" || inputMonth.value == "2") && inputDay.value >= "30") && isLeapYear
+                        (((inputMonth.value == "02" || inputMonth.value == "2") && inputDay.value >= "30") && isLeapYear) ||
+                        ((inputMonth.value == "02" || inputMonth.value == "2") && inputDay.value > "28" && isLeapYear == false)
                     )) {
                     messages[0].innerHTML = errorInvalidDate;
                     labels.forEach(label => {
